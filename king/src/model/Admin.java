@@ -7,11 +7,17 @@ public class Admin extends Person {
     }
 
     @Override
-    public boolean login(String inputPassword) { return false; }
+    public boolean login(String inputPassword) {
+        return getPassword().equals(inputPassword);
+    }
 
     @Override
-    public String getRole() { return null; }
+    public String getRole() {
+        return "Admin";
+    }
 
     @Override
-    public String toString() { return null; }
+    public String toString() {
+        return String.format("[%s] %s - Admin (Full Access)", getId(), getName());
+    }
 }
