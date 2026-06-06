@@ -2,7 +2,7 @@ package model;
 
 import java.util.ArrayList;
 
-public class Hero {
+public class Hero implements Searchable {
     private String id;
     private String name;
     private HeroType type;
