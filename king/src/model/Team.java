@@ -2,7 +2,7 @@ package model;
 
 import java.util.ArrayList;
 
-public class Team {
+public class Team implements Searchable {
     private String id;
     private String name;
     private ArrayList<Player> players;

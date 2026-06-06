@@ -1,45 +1,35 @@
 package service;
 
-// TODO: Framework for FileStorageService
-// Purpose: Persist application data to disk and load it back.
-//          Enables data survival across program restarts.
-//
-// Fields to add:
-//   - String dataDirectory (default: "data/")
-//   - String playersFile, heroesFile, teamsFile, equipmentFile, matchesFile, adminsFile
-//
-// Constructor to add:
-//   - FileStorageService() — creates data directory if not exists
-//
-// Methods to add (framework signatures only):
-//   // Save operations
-//   - saveAll(GameDataManager manager): void
-//       → Delegate to individual save methods
-//   - savePlayers(ArrayList<Player> players): void
-//   - saveHeroes(ArrayList<Hero> heroes): void
-//   - saveTeams(ArrayList<Team> teams): void
-//   - saveEquipment(ArrayList<EquipmentItem> equipment): void
-//   - saveMatchRecords(ArrayList<MatchRecord> records): void
-//   - saveAdmins(ArrayList<Admin> admins): void
-//
-//   // Load operations
-//   - loadAll(): GameDataManager
-//       → Create new GameDataManager, populate from files, return it
-//   - loadPlayers(): ArrayList<Player>
-//   - loadHeroes(): ArrayList<Hero>
-//   - loadTeams(): ArrayList<Team>
-//   - loadEquipment(): ArrayList<EquipmentItem>
-//   - loadMatchRecords(): ArrayList<MatchRecord>
-//   - loadAdmins(): ArrayList<Admin>
-//
-//   // Utility
-//   - ensureDirectoryExists(): void
-//   - fileExists(String filename): boolean
-//
-// Implementation notes (for future):
-//   - Option A: Java Serialization (simple, binary format)
-//   - Option B: CSV format (human-readable, easy to edit)
-//   - Option C: JSON (structured, modern approach — requires external library)
-//   - For this project, Java Serialization or CSV is recommended
-//
-// Dependencies: model.*, java.io.*, java.nio.file.*
+import model.*;
+import java.io.*;
+import java.util.ArrayList;
+
+/**
+ * FileStorageService — Stub implementation for testing.
+ * Save/Load methods are no-ops until full implementation is ready.
+ */
+public class FileStorageService {
+
+    private static final String DATA_DIR = "data/";
+
+    public FileStorageService() {
+        ensureDirectoryExists();
+    }
+
+    /** Returns a new empty GameDataManager (no file loading yet). */
+    public GameDataManager loadAll() {
+        return new GameDataManager();
+    }
+
+    /** No-op save. Data will not persist across restarts. */
+    public void saveAll(GameDataManager manager) {
+        System.out.println("[FileStorageService] Save not implemented yet. Data not persisted.");
+    }
+
+    private void ensureDirectoryExists() {
+        File dir = new File(DATA_DIR);
+        if (!dir.exists()) {
+            dir.mkdirs();
+        }
+    }
+}
