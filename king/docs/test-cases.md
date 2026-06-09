@@ -467,3 +467,34 @@ Notes
 
 - Null inputs, missing IDs, wrong password, no-match search, and draw
   winner handling behave safely.
+
+Test Session 15: Manual Menu Test for Functions 1-6
+
+**Date:** 2026-06-09
+
+**Test Type:** Manual Functional Test
+
+**Test File:** N/A (manual console test)
+
+**Component Under Test:** Main menu functions 1-6
+
+**Result: 6 PASSED, 0 FAILED**
+
+Test Cases
+
+| # | Menu Function | Example Input | Expected Output | Actual Output | Result |
+|:--:|:--|:--|:--|:--|:--:|
+| 1 | Search Player | One valid player search example | Player information displayed correctly | Output matched expectation | **PASS** |
+| 2 | Team Overview | One team overview example | Team information and members displayed correctly | Output matched expectation | **PASS** |
+| 3 | Hero Details | One valid hero search example | Hero details displayed correctly | Output matched expectation | **PASS** |
+| 4 | Equipment Stats | One equipment statistics example | Equipment information displayed correctly | Output matched expectation | **PASS** |
+| 5 | Match History | One match history example | Match records displayed correctly | Output matched expectation | **PASS** |
+| 6 | Rankings | One ranking example | Ranking list displayed in correct order | Output matched expectation | **PASS** |
+
+Notes
+
+- This was a manual console-based full menu test.
+
+- Functions 1 to 6 were each tested with one representative example.
+
+- The user confirmed that all six manual test examples passed.
