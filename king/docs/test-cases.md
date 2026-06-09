@@ -498,3 +498,31 @@ Notes
 - Functions 1 to 6 were each tested with one representative example.
 
 - The user confirmed that all six manual test examples passed.
+
+Test Session 16: Persistence Implementation Verification
+
+**Date:** 2026-06-09
+
+**Test Type:** Temporary automated verification
+
+**Test File:** PersistenceCheck.java (temporary file, deleted after test)
+
+**Component Under Test:** FileStorageService, GameDataManager, Serializable model objects
+
+**Result: 3 PASSED, 0 FAILED**
+
+Test Cases
+
+| # | Test Case | Input | Expected Output | Actual Output | Result |
+|:--:|:--|:--|:--|:--|:--:|
+| 1 | Save full GameDataManager | saveAll(manager with P99) | Data file is written without exception | Data saved to data/game_data.dat | **PASS** |
+| 2 | Load saved GameDataManager | loadAll() after save | Loaded manager is not empty | Loaded entity count = 61 | **PASS** |
+| 3 | Verify restored player | findPlayerById("P99") after load | P99 is restored with correct name | P99 Persist Test Player restored | **PASS** |
+
+Notes
+
+- Persistence was implemented using Java object serialization.
+
+- Core data classes now support Serializable.
+
+- Temporary test code and temporary data file were deleted after verification.

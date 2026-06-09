@@ -1,9 +1,12 @@
 package model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class MatchRecord {
+public class MatchRecord implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     private String id;
     private Team teamA;
     private Team teamB;

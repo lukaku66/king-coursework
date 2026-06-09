@@ -1,8 +1,11 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Team implements Searchable {
+public class Team implements Searchable, Serializable {
+    private static final long serialVersionUID = 1L;
+
     private String id;
     private String name;
     private ArrayList<Player> players;

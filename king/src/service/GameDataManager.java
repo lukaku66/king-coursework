@@ -2,6 +2,7 @@ package service;
 
 import model.*;
 import util.DataInitializer;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -19,7 +20,8 @@ import java.util.ArrayList;
  *   All fields have public getters/setters so FileStorageService
  *   can replace the lists after loading from disk.
  */
-public class GameDataManager {
+public class GameDataManager implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     private ArrayList<Player> players;
     private ArrayList<Hero> heroes;

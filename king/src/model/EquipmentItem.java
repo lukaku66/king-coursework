@@ -1,6 +1,8 @@
 package model;
 
 public class EquipmentItem implements Equipment {
+    private static final long serialVersionUID = 1L;
+
     private String id;
     private String name;
     private EquipmentType type;

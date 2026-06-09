@@ -3,6 +3,8 @@ package model;
 import java.util.ArrayList;
 
 public class Player extends Person {
+    private static final long serialVersionUID = 1L;
+
     private int level;
     private double winRate;
     private ArrayList<Hero> heroes;
