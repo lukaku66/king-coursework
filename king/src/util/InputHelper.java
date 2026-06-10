@@ -1,5 +1,6 @@
 package util;
 
+import exception.ValidationException;
 import java.util.Scanner;
 
 /**
@@ -12,6 +13,7 @@ import java.util.Scanner;
  * Usage:
  *   String name = InputHelper.readString("Enter name: ");
  *   int choice = InputHelper.readInt("Enter choice: ");
+ *   int level = InputHelper.readPositiveInt("Enter level: ");
  */
 public class InputHelper {
 
@@ -37,6 +39,48 @@ public class InputHelper {
                 return Integer.parseInt(scanner.nextLine().trim());
             } catch (NumberFormatException e) {
                 System.out.println("Invalid input. Please enter a number.");
+            }
+        }
+    }
+
+    /**
+     * Reads a positive integer (>= 0) from the user.
+     * Throws ValidationException if negative.
+     */
+    public static int readPositiveInt(String prompt) {
+        while (true) {
+            try {
+                System.out.print(prompt);
+                int value = Integer.parseInt(scanner.nextLine().trim());
+                if (value < 0) {
+                    throw new ValidationException("Value cannot be negative. Please enter a non-negative number.");
+                }
+                return value;
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a number.");
+            } catch (ValidationException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+
+    /**
+     * Reads a positive double (>= 0) from the user.
+     * Throws ValidationException if negative.
+     */
+    public static double readPositiveDouble(String prompt) {
+        while (true) {
+            try {
+                System.out.print(prompt);
+                double value = Double.parseDouble(scanner.nextLine().trim());
+                if (value < 0) {
+                    throw new ValidationException("Value cannot be negative. Please enter a non-negative number.");
+                }
+                return value;
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a number.");
+            } catch (ValidationException e) {
+                System.out.println(e.getMessage());
             }
         }
     }

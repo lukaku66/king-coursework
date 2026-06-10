@@ -456,10 +456,12 @@ public class Main {
         System.out.println("\n--- Data Management (Admin Only) ---");
         System.out.println("1. Add Player");
         System.out.println("2. Remove Player");
-        System.out.println("3. Add Hero");
-        System.out.println("4. Remove Hero");
-        System.out.println("5. Add Match Record");
-        System.out.println("6. Remove Match Record");
+        System.out.println("3. Add Team");
+        System.out.println("4. Remove Team");
+        System.out.println("5. Add Hero");
+        System.out.println("6. Remove Hero");
+        System.out.println("7. Add Match Record");
+        System.out.println("8. Remove Match Record");
         System.out.println("0. Back");
         int sub = InputHelper.readInt("Choose option: ");
 
@@ -489,6 +491,28 @@ public class Main {
                 break;
             }
             case 3: {
+                String id = InputHelper.readString("New Team ID: ");
+                if (dataManager.findTeamById(id) != null) {
+                    System.out.println("ID already exists.");
+                    break;
+                }
+                String name = InputHelper.readString("Team Name: ");
+                boolean ok = dataManager.addTeam(new Team(id, name));
+                System.out.println(ok ? "Team added." : "Failed to add team.");
+                break;
+            }
+            case 4: {
+                String id = InputHelper.readString("Team ID to remove: ");
+                Team t = dataManager.findTeamById(id);
+                if (t != null) {
+                    dataManager.removeTeam(t);
+                    System.out.println("Team removed.");
+                } else {
+                    System.out.println("Team not found.");
+                }
+                break;
+            }
+            case 5: {
                 String id = InputHelper.readString("New Hero ID: ");
                 if (dataManager.findHeroById(id) != null) {
                     System.out.println("ID already exists.");
@@ -499,10 +523,10 @@ public class Main {
                 String typeStr = InputHelper.readString("Type: ");
                 try {
                     HeroType type = HeroType.valueOf(typeStr.toUpperCase());
-                    int hp = InputHelper.readInt("HP: ");
-                    int atk = InputHelper.readInt("Attack: ");
-                    int def = InputHelper.readInt("Defense: ");
-                    int spd = InputHelper.readInt("Speed: ");
+                    int hp = InputHelper.readPositiveInt("HP: ");
+                    int atk = InputHelper.readPositiveInt("Attack: ");
+                    int def = InputHelper.readPositiveInt("Defense: ");
+                    int spd = InputHelper.readPositiveInt("Speed: ");
                     boolean ok = dataManager.addHero(new Hero(id, name, type, hp, atk, def, spd));
                     System.out.println(ok ? "Hero added." : "Failed to add hero.");
                 } catch (IllegalArgumentException e) {
@@ -510,7 +534,7 @@ public class Main {
                 }
                 break;
             }
-            case 4: {
+            case 6: {
                 String id = InputHelper.readString("Hero ID to remove: ");
                 Hero h = dataManager.findHeroById(id);
                 if (h != null) {
@@ -521,7 +545,7 @@ public class Main {
                 }
                 break;
             }
-            case 5: {
+            case 7: {
                 String id = InputHelper.readString("New Match ID: ");
                 if (dataManager.findMatchRecordById(id) != null) {
                     System.out.println("ID already exists.");
@@ -553,7 +577,7 @@ public class Main {
                 }
                 break;
             }
-            case 6: {
+            case 8: {
                 String id = InputHelper.readString("Match ID to remove: ");
                 MatchRecord mr = dataManager.findMatchRecordById(id);
                 if (mr != null) {
