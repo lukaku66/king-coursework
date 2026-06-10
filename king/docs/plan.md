@@ -46,9 +46,10 @@ Main entry point: `Main.java`
 | Encapsulation | Class fields are private and accessed through getter/setter methods or controlled business methods |
 | Collection | `ArrayList` is used to store players, heroes, equipment, teams, match records, and admins |
 | Enum | `HeroType`, `EquipmentType`, and `MatchResult` represent fixed categories |
-| Exception Handling | `try-catch` is used for input conversion, hero type conversion, and file save/load operations |
+| Exception Handling | `try-catch` is used for input conversion, hero type conversion, and file save/load operations; `ValidationException` is used for input validation |
 | File Persistence | `FileStorageService` uses `ObjectOutputStream` and `ObjectInputStream` to save and load data |
 | Bidirectional Association | `Player ↔ Hero` and `Player ↔ Team` are synchronized through add/remove methods |
+| Custom Exception | `ValidationException` extends `RuntimeException` for invalid input such as negative level |
 
 ---
 
@@ -86,9 +87,15 @@ Main entry point: `Main.java`
 | Class Name | Responsibility |
 |---|---|
 | `DataInitializer` | Creates initial data, including teams, players, heroes, equipment, match records, and admins |
-| `InputHelper` | Handles console input, integer reading, and pause operations |
+| `InputHelper` | Handles console input, integer reading, string reading, and pause operations |
 
-### 4.4 Main Program
+### 4.4 exception Package
+
+| Class Name | Responsibility |
+|---|---|
+| `ValidationException` | Custom runtime exception for input validation errors (e.g., negative level) |
+
+### 4.5 Main Program
 
 | Class Name | Responsibility |
 |---|---|
@@ -217,6 +224,20 @@ Java object serialization is used because the project contains multiple object r
 | 8 | Save Data |
 | 0 | Logout |
 
+#### 7.3.1 Data Management Submenu (Admin)
+
+| Option | Function |
+|---|---|
+| 1 | Add Player |
+| 2 | Remove Player |
+| 3 | Add Team |
+| 4 | Remove Team |
+| 5 | Add Hero |
+| 6 | Remove Hero |
+| 7 | Add Match Record |
+| 8 | Remove Match Record |
+| 0 | Back |
+
 ---
 
 ## 8. AI Usage Plan
@@ -229,7 +250,7 @@ Java object serialization is used because the project contains multiple object r
 
 Personal AI usage record:
 
-> To be completed by the student.
+> 
 
 ---
 
@@ -311,6 +332,8 @@ Manual testing details:
 | Invalid input | The program may crash or behave incorrectly | Use `InputHelper` to handle input consistently |
 | Role permission confusion | A player may access admin functions | Separate Admin and Player menus |
 | AI-assisted code may be inaccurate | Compilation errors or logic bugs may appear | Compile and test after each code change |
+| Missing custom exception handling | Invalid input may cause program crash | Added `ValidationException` and `readPositiveInt()` in `InputHelper` |
+| MatchRecord cascade incomplete | Removing match does not clean team history | Verified `removeMatchRecord()` removes from both team histories |
 
 ---
 
@@ -320,5 +343,5 @@ Manual testing details:
 
 ---
 
-*Version: 2.1*  
-*Time: 2026-06-09*
+*Version: 2.2*  
+*Time: 2026-06-10*
