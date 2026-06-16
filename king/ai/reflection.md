@@ -12,7 +12,7 @@ This document answers the 10 required reflection questions from the coursework a
 
 ## 2. Which prompt was the most useful? Why?
 
-> A prompt that clearly expresses demands, reasonably connects context, and enables the AI to understand my objectives.
+> "Please implement the persistence feature. Make the core model classes implement the Serializable interface, persist the entire GameDataManager instance using ObjectOutputStream, and read it back via ObjectInputStream. Save to data/game_data.dat." This was the most useful prompt because it clearly specified the technical approach (object serialization), the target classes that needed modification, and the exact file location. The AI generated correct code on the first attempt, and all 6 verification tests passed immediately.
 
 ---
 
@@ -24,7 +24,7 @@ This document answers the 10 required reflection questions from the coursework a
 
 ## 4. How did you check whether AI-generated code was correct?
 
-> I use AI to test the program or test the program by myself.
+> I followed three steps: (1) Compiled the code immediately with `javac` to check for syntax errors. (2) Created temporary test classes to verify specific functionality — for example, after implementing persistence, I added a test player, saved data, loaded it back, and confirmed the player was restored correctly. (3) Ran the program manually through the console menu to test each function interactively. After each verification, I deleted the temporary test code to keep the project clean.
 
 ---
 

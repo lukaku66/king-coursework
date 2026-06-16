@@ -155,7 +155,7 @@ Main entry point: `Main.java`
 | Data Type | Quantity | Created In |
 |---|---:|---|
 | Team | 3 | `DataInitializer` |
-| Player | 10 | `DataInitializer` |
+| Player | 15 | `DataInitializer` |
 | Hero | 15 | `DataInitializer` |
 | Equipment | 20 | `DataInitializer` |
 | MatchRecord | 10 | `DataInitializer` |

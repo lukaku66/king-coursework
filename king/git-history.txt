@@ -1,2 +1,26 @@
-git-history
-
+* 4917223 (HEAD -> master, origin/master) [Human]write the reflection, answer the problem in the reflection.
+* 617fc72 [Docs]complete the  ai/agent-log.md and ai/prompts.md.
+* 403512f [Fix]Fix the Custom Exception Class, Input Validation Enhancement, Admin Team Management and Match Record Cascade Cleanup.
+* f527484 [Docs]Found that the AI altered the original language of the plan, so I revised it back to English.
+* 382b0d1 [Docs]Polished the plan with AI based on current progress.
+* e1fab1f [AI-Implementation]Make the core model classes implement the  Serializable  interface, persist the entire  GameDataManager  instance using  ObjectOutputStream , and read it back via  ObjectInputStream .
+* d25b95c [Human]Manually tested the functions of Menu 1 through Menu 6.
+* dfe4fe3 [Test]Test Bidirectional Sync ，Save Data ，Load Data， Edge Cases functions.
+* f135ce6 [Test]Test the Admin Data Mgmt and Player Self-Mgmt functions
+* cc40ff9 [Test]Test Player Rankings and Team Rankings functions.
+* e42796d [Test]Test Search Player，Search Team，Search Hero，Search Equipment，Search Match functions.
+* 8299ea5 [Test]Test Admin Menu vs. Player Menu,Guest Redirection, Permission Boundaries.
+* 1fef0ea [AI-Review]The login and logout functions for both players and administrators have been tested, and the test results are normal.
+* 3c8ab26 [AI-Implementation]Achieve InputHelper which  is a utility class providing console input methods,and achieve  Main which serves as the program entry point with initialization, login/player/admin menus, and 8 functional branches.
+* 40c4ff9 [AI-Implementation]This sorting service injects  GameDataManager  via constructor, provides 4 Player sorting methods, 3 Team sorting methods plus one generic TopN method with dynamically-selected Comparators using Java8 comparator syntax to complete RankingService class.
+* 3ef6eb3 [AI-Implementation]Achieve SearchService class, Following the same constructor injection pattern as AuthenticationService, SearchService is completed in four steps: holding GameDataManager, developing two generic search methods, writing six domain-specific search functions and optimizing searchByName for fuzzy keyword lookup.
+* f644663 [AI-Implementation]Achieve AuthenticationService class, which uses constructor-injected  GameDataManager  to validate user login by matching ID/password, checks user roles with  instanceof , and tracks the current user via a dedicated field and getter.
+* 9c07fad [AI-Implementation]Achieve GameDataManager class, include a data access layer implementation with single-responsibility CRUD, initialization, persistence, ID lookups, duplicate prevention, cascading deletion, and polymorphic  Person  retrieval.
+* f070788 [AI-Architect]Write the basic framework for the five classes in the service package, decisions: GameDataManager acts as the central hub, Searchable interface and generics, FileStorageService is decoupled as an independent component, each service receives the GameDataManager via its constructor.
+* 4da58ab [Human]According to the AI development plan, manually create five service classes under the service package:AuthenticationService,FileStorageService,GameDataManager,RankingService,SearchService.
+* bf8fb16 [AI-Implementation]Complete implementation of Team and MatchRecord, all classes under model package have been fully coded.
+* 41d3749 [AI-Architect]Write the basic framework for the MatchRecord class and the Team class]
+* 36179dd [AI-Implementation]Implement core functions for all classes inside model except MatchRecord and Team, then request AI to inspect and optimize codes.
+* 884f85a [AI-Architect]Draft object-oriented class structure for Admin, Equipment, Hero, Person and Player.
+* a29e72b [Human]Write the first virson pian.md
+* b893e0c [Human] I creat 7 bastic classes and build a structure

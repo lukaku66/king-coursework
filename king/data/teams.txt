@@ -1,0 +1,4 @@
+ID,Name,Players,MatchCount,WinRate,AverageLevel
+T01,Dragon Riders,P01;P02;P03;P04;P11,7,0.57,27.2
+T02,Phoenix Squad,P05;P06;P07;P12;P13,7,0.43,28.4
+T03,Thunder Wolves,P08;P09;P10;P14;P15,7,0.43,25.6

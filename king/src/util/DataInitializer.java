@@ -160,60 +160,80 @@ public class DataInitializer {
         teams.add(new Team("T03", "Thunder Wolves"));
     }
 
-    // --- Step 4: Create 10 Players, assign to teams and heroes ---
+    // --- Step 4: Create 15 Players, assign to teams and heroes ---
 
     private void createPlayers() {
-        // Team 1: Dragon Riders (4 players)
+        // Team 1: Dragon Riders (5 players)
         players.add(new Player("P01", "Zhang Wei",  "pass123", 30));
         players.add(new Player("P02", "Li Na",      "pass123", 28));
         players.add(new Player("P03", "Wang Qiang",  "pass123", 25));
         players.add(new Player("P04", "Zhao Min",    "pass123", 27));
+        players.add(new Player("P11", "Lin Feng",    "pass123", 26));
 
-        // Team 2: Phoenix Squad (3 players)
+        // Team 2: Phoenix Squad (5 players)
         players.add(new Player("P05", "Chen Jie",    "pass123", 32));
         players.add(new Player("P06", "Liu Yang",    "pass123", 26));
         players.add(new Player("P07", "Huang Lei",   "pass123", 29));
+        players.add(new Player("P12", "Ma Chao",     "pass123", 31));
+        players.add(new Player("P13", "Wei Qing",    "pass123", 24));
 
-        // Team 3: Thunder Wolves (3 players)
+        // Team 3: Thunder Wolves (5 players)
         players.add(new Player("P08", "Sun Li",     "pass123", 24));
         players.add(new Player("P09", "Zhou Yu",     "pass123", 31));
         players.add(new Player("P10", "Wu Song",     "pass123", 22));
+        players.add(new Player("P14", "Deng Ai",     "pass123", 28));
+        players.add(new Player("P15", "Guan Ping",   "pass123", 23));
 
         // Assign players to teams (bidirectional sync)
         assignToTeam("P01", "T01");
         assignToTeam("P02", "T01");
         assignToTeam("P03", "T01");
         assignToTeam("P04", "T01");
+        assignToTeam("P11", "T01");
         assignToTeam("P05", "T02");
         assignToTeam("P06", "T02");
         assignToTeam("P07", "T02");
+        assignToTeam("P12", "T02");
+        assignToTeam("P13", "T02");
         assignToTeam("P08", "T03");
         assignToTeam("P09", "T03");
         assignToTeam("P10", "T03");
+        assignToTeam("P14", "T03");
+        assignToTeam("P15", "T03");
 
         // Assign heroes to players (bidirectional sync)
         assignHeroToPlayer("P01", "H01", "H06");
         assignHeroToPlayer("P02", "H10", "H15");
         assignHeroToPlayer("P03", "H04", "H07");
         assignHeroToPlayer("P04", "H11", "H15");
+        assignHeroToPlayer("P11", "H02", "H08");
         assignHeroToPlayer("P05", "H05", "H13");
         assignHeroToPlayer("P06", "H08", "H09");
         assignHeroToPlayer("P07", "H02", "H14");
+        assignHeroToPlayer("P12", "H01", "H03");
+        assignHeroToPlayer("P13", "H10", "H12");
         assignHeroToPlayer("P08", "H12", "H13");
         assignHeroToPlayer("P09", "H03", "H06");
         assignHeroToPlayer("P10", "H09", "H07");
+        assignHeroToPlayer("P14", "H04", "H05");
+        assignHeroToPlayer("P15", "H11", "H12");
 
         // Set win rates for ranking purposes
         findPlayerById("P01").setWinRate(0.72);
         findPlayerById("P02").setWinRate(0.65);
         findPlayerById("P03").setWinRate(0.58);
         findPlayerById("P04").setWinRate(0.61);
+        findPlayerById("P11").setWinRate(0.54);
         findPlayerById("P05").setWinRate(0.78);
         findPlayerById("P06").setWinRate(0.55);
         findPlayerById("P07").setWinRate(0.63);
+        findPlayerById("P12").setWinRate(0.71);
+        findPlayerById("P13").setWinRate(0.48);
         findPlayerById("P08").setWinRate(0.50);
         findPlayerById("P09").setWinRate(0.70);
         findPlayerById("P10").setWinRate(0.45);
+        findPlayerById("P14").setWinRate(0.60);
+        findPlayerById("P15").setWinRate(0.53);
     }
 
     // Helper: assign a player to a team by IDs

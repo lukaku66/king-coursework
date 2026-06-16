@@ -1,0 +1,21 @@
+ID,Name,Type,AttackBonus,DefenseBonus
+EQ01,Infinite Blade,ATTACK,80,0
+EQ02,Bloodweeper,ATTACK,60,0
+EQ03,Shadow Battleaxe,ATTACK,70,0
+EQ04,Blade of Eternity,ATTACK,90,0
+EQ05,Fenrir's Tooth,ATTACK,85,0
+EQ06,Guardian Armor,DEFENSE,0,80
+EQ07,Blazing Cape,DEFENSE,0,60
+EQ08,Frost Cloak,DEFENSE,0,70
+EQ09,Divine Shield,DEFENSE,0,90
+EQ10,Ominous Premonition,DEFENSE,0,75
+EQ11,Sage Staff,MAGIC,40,0
+EQ12,Divine Oracle,MAGIC,50,0
+EQ13,Fiery Gloves,MAGIC,45,0
+EQ14,Echo Staff,MAGIC,55,0
+EQ15,Astral Wand,MAGIC,60,0
+EQ16,Boots of Speed,MOVEMENT,0,0
+EQ17,Swift Boots,MOVEMENT,0,0
+EQ18,Resistance Boots,MOVEMENT,0,30
+EQ19,Blade of the Jungle,JUNGLE,65,0
+EQ20,Hunter's Mark,JUNGLE,50,0
